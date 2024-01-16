@@ -1,7 +1,19 @@
 body {
 	margin: 0;
+}
+
+.autorotate {
+	transition: transform 0.2s;
 	width: 100vw;
 	height: 100vh;
+}
+
+@media screen and (orientation: portrait) {
+	.autorotate {
+		transform: translate(-50%, -50%) rotate(90deg) translate(50%, -50%);
+		width: 100vh;
+		height: 100vw;
+	}
 }
 
 .grid-container {
