@@ -1,0 +1,29 @@
+body {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.grid-container {
+	display: grid;
+	--padding: calc(min(1vw, 1vh));
+	--columns: 5;
+	--rows: 5;
+	/* Not works with images in Chrome */
+	/* grid-template-columns: repeat(var(--columns), 1fr); */
+	/* grid-template-rows: repeat(var(--rows), 1fr); */
+	grid-template-columns: repeat(var(--columns), calc((100% - (var(--columns) - 1) * var(--padding)) / var(--columns)));
+	grid-template-rows: repeat(var(--rows), calc((100% - (var(--rows) - 1) * var(--padding)) / var(--rows)));
+	gap: var(--padding);
+	padding: var(--padding);
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.grid-item {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	background-color: aliceblue;
+}
